@@ -15,7 +15,7 @@
 4. Feel free to modify and experiment with the code.
 
 
-**Let's explore ecology and evolution through coding!**
+**Let's explore ecology and evolution!**
 <p align="center">
 <img src="https://github.com/TheUtpalAnand/BI2113/blob/main/Media/ecoevo.avif" alt="Footer Image">
 </p>
