@@ -16,5 +16,7 @@
 
 
 **Let's explore ecology and evolution through coding!**
-
+<p align="center">
+<img src="https://github.com/TheUtpalAnand/BI2113/blob/main/Media/ecoevo.avif" alt="Footer Image">
+</p>
 
