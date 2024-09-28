@@ -11,6 +11,7 @@ and run.
 
 **Or, go to [![Reference](https://img.shields.io/badge/Reference-link-blue?style=for-the-badge)](https://cbs.umn.edu/populus/download)**
 
+**But don't forget to get intuition and understanding behind models!!**
 **Structure Of This Repository:**
 
 * `assignments`: Contains code for course assignments.
