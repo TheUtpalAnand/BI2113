@@ -1,5 +1,7 @@
 #For adding latex first run this otherwise the codes given below won't work
-!apt-get install -y texlive texlive-latex-extra texlive-fonts-recommended dvipng cm-super
+#!apt-get install -y texlive texlive-latex-extra texlive-fonts-recommended dvipng cm-super
+
+
 # Question 2. Assume a Lotka-Volterra competition scenario with the following parameter values:
 # Species 1: r1=1, K1=200, α12 = 0.8; Species 2: r2=0.5, K2=300, α21=2
 # Given below are four starting points for the system. For each case, what will be the population sizes
