@@ -1,5 +1,7 @@
 #For adding latex first run this
-!apt-get install -y texlive texlive-latex-extra texlive-fonts-recommended dvipng cm-super
+#!apt-get install -y texlive texlive-latex-extra texlive-fonts-recommended dvipng cm-super
+
+
 #Question 1 Q1. For the population described by the transition matrix given below ([0.4,3],[0.32,0.7])
 # a) What is the ratio of the total population sizes (i.e. sum of both stage classes in a generation) in
 # two successive generations at equilibrium?
