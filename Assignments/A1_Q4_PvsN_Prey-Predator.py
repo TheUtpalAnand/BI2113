@@ -1,6 +1,10 @@
 #For adding latex first run this otherwise the codes given below won't work
-!apt-get install -y texlive texlive-latex-extra texlive-fonts-recommended dvipng cm-super
-# Q4. The government is planning to reintroduce 10 Namibian cheetahs to Madhya Pradesh's Gandhi
+#!apt-get install -y texlive texlive-latex-extra texlive-fonts-recommended dvipng cm-super
+
+
+
+
+#Q4. The government is planning to reintroduce 10 Namibian cheetahs to Madhya Pradesh's Gandhi
 # Sagar Wildlife Sanctuary in January 2025. At the same time, they plan to introduce 30 Sangai deers
 # from Manipur into the sanctuary as prey. No further introduction of either prey or the predator is
 # planned. The government has decided to celebrate the introduction after a few years through a
