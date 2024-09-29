@@ -1,6 +1,11 @@
 #For adding latex first run this otherwise the codes given below won't work
-!apt-get install -y texlive texlive-latex-extra texlive-fonts-recommended dvipng cm-super
-# Question 3(a). Suppose we have a hypothetical insect
+#!apt-get install -y texlive texlive-latex-extra texlive-fonts-recommended dvipng cm-super
+
+
+
+
+
+#Question 3(a). Suppose we have a hypothetical insect
 # population with a cohort lifetable that looks as
 # on the right. Over time, a population of this
 # insect will be increasing or decreasing in
