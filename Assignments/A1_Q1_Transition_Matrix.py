@@ -45,16 +45,34 @@ for generation in range(num_generations):
     population = np.dot(transition_matrix, population)
 
 # Plot the results
-plt.figure(figsize=(16, 9))
-plt.plot(range(num_generations), juvenile_population, label='Juveniles')
-plt.plot(range(num_generations), adult_population, label='Adults')
-plt.plot(range(num_generations), total_population, label='Total Population')
-plt.xlabel('Generation')
-plt.ylabel('Population')
-plt.title('Juvenile and Adult Population Over Generations')
-plt.legend()
-plt.grid(True)
+fig, axs = plt.subplots(1, 2, figsize=(12, 5))
+
+# First subplot: Juvenile, Adult, and Total Population over Generations
+axs[0].plot(range(num_generations), juvenile_population, label='Juveniles')
+axs[0].plot(range(num_generations), adult_population, label='Adults')
+axs[0].plot(range(num_generations), total_population, label='Total Population')
+axs[0].set_xlabel('Generation')
+axs[0].set_ylabel('Population')
+axs[0].set_title('Juvenile and Adult Population Over Generations')
+axs[0].legend()  # To show the legend
+axs[0].grid(True)
+
+# Second subplot: Eigenvalue Ratio Over Generations
+axs[1].plot(range(num_generations - 1), ratio_total, label='EigenValues')
+axs[1].set_xlabel('Generation')
+axs[1].set_ylabel('Eigenvalue')
+axs[1].set_title('Ratio of Total Population Over Generations')
+axs[1].legend()  # To show the legend
+axs[1].grid(True)
+
+# Adjust layout to prevent overlap
+plt.tight_layout()
+
+# Show the plots
 plt.show()
+
+
 print(ratio_total)
 print(f"Percentage of Juvenile: {ratio_juvenile}")
 print(f"Percenatge of adults: {ratio_adult}")
+
