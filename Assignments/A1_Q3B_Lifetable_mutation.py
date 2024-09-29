@@ -1,5 +1,7 @@
 #For adding latex first run this otherwise the codes given below won't work
-!apt-get install -y texlive texlive-latex-extra texlive-fonts-recommended dvipng cm-super
+#!apt-get install -y texlive texlive-latex-extra texlive-fonts-recommended dvipng cm-super
+
+
 # Q3b. Suppose there was a mutation in the insect
 # population mentioned in Part a due to which this
 # insect now lives two days longer with an
