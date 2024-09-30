@@ -3,8 +3,7 @@
 
 
 
-
-#Q4. The government is planning to reintroduce 10 Namibian cheetahs to Madhya Pradesh's Gandhi
+# Q4. The government is planning to reintroduce 10 Namibian cheetahs to Madhya Pradesh's Gandhi
 # Sagar Wildlife Sanctuary in January 2025. At the same time, they plan to introduce 30 Sangai deers
 # from Manipur into the sanctuary as prey. No further introduction of either prey or the predator is
 # planned. The government has decided to celebrate the introduction after a few years through a
@@ -43,8 +42,8 @@ r1, C, d2, g = (1.05, 0.1, 0.6, 0.45)
 xv, yv = np.meshgrid(x, y)
 
 # Compute the vector field components using the meshgrid
-x1 = r1 * yv - C * yv * xv
-y1 = -d2 * xv + g * C * yv * xv
+x1 = r1 * xv - C * xv * yv
+y1 = -d2 * yv + g * C * xv * yv
 
 # Normalize the vectors for better visibility
 magnitude = np.sqrt(x1**2 + y1**2)
@@ -61,8 +60,8 @@ P_nullcline = r1 / C #- N_nullcline
 P_nullcline_dP = d2 / (g * C)
 
 # Use raw strings (r'') and remove newlines to prevent issues with LaTeX code
-ax1.axvline( P_nullcline, color='blue', linestyle='--', label=r'$\frac{dN}{dt} = 0$') # Removed newline and escaped $
-ax1.axhline(P_nullcline_dP, color='green', linestyle='--', label=r'$\frac{dP}{dt} = 0$') # Removed newline and escaped $
+ax1.axhline( P_nullcline, color='blue', linestyle='--', label=r'$\frac{dN}{dt} = 0$') # Removed newline and escaped $
+ax1.axvline(P_nullcline_dP, color='green', linestyle='--', label=r'$\frac{dP}{dt} = 0$') # Removed newline and escaped $
 
 # Add quiver plot (vector field) with normalized vectors
 ax1.quiver(xv, yv, x1_normalized, y1_normalized, scale=50, color='black')
@@ -88,14 +87,15 @@ t_span = [0,50]  # From time 0 to 1000
 t_eval = np.linspace(0, 50, 50000)  # Points at which to evaluate the solution
 
 # Solve the system of equations
-sol = solve_ivp(lotka_volterra, t_span, initial_conditions, t_eval=t_eval)
+sol = solve_ivp(lotka_volterra, t_span, initial_conditions, t_eval=t_eval, method='DOP853')
 
 # Plot the trajectory
-ax1.plot(sol.y[0], sol.y[1], color='red', label='Trajectory')
+ax1.plot(sol.y[0], sol.y[1], color='blue', label='Trajectory')
 
 # Add title and legend
 ax1.set_title(r'Lotka-Volterra ($r_1 = 1.05, C = 0.1, d_2 = 0.6, g = 0.45$)')
 ax1.legend()
 
 # Show the plot
+plt.show()
 plt.show()
