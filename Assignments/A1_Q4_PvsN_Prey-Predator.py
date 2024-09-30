@@ -28,12 +28,12 @@ from scipy.integrate import solve_ivp
 plt.rcParams['text.usetex'] = True
 
 # Set figure size
-rcParams['figure.figsize'] = 10, 10
+rcParams['figure.figsize'] = 15, 10
 
 # Define the grid size for x and y axes
 grid_size = 33
 x = np.linspace(1, 59, grid_size)  # Reduced number of points for visualization
-y = np.linspace(1, 34, grid_size)
+y = np.linspace(1, 35, grid_size)
 
 # Constants for the system
 r1, C, d2, g = (1.05, 0.1, 0.6, 0.45)
@@ -64,11 +64,11 @@ ax1.axhline( P_nullcline, color='blue', linestyle='--', label=r'$\frac{dN}{dt} =
 ax1.axvline(P_nullcline_dP, color='green', linestyle='--', label=r'$\frac{dP}{dt} = 0$') # Removed newline and escaped $
 
 # Add quiver plot (vector field) with normalized vectors
-ax1.quiver(xv, yv, x1_normalized, y1_normalized, scale=50, color='black')
+ax1.quiver(xv, yv, x1_normalized, y1_normalized, scale=50, color='darkcyan')
 
 # Set axis limits and labels
-ax1.set_xlim([0, 60])
-ax1.set_ylim([0, 35])
+ax1.set_xlim([0, 32])
+ax1.set_ylim([0, 22])
 ax1.set_xlabel(r'$N$ (Sangai Deer)')
 ax1.set_ylabel(r'$P$ (Cheetah)')
 
@@ -79,23 +79,30 @@ def lotka_volterra(t, z):
     dPdt = -d2 * P + g * C * N * P
     return [dNdt, dPdt]
 
-# Initial conditions for the trajectory
-initial_conditions = [10.0, 30.0]  # Starting population sizes for N and P
+# Initial conditions for the trajectory (Corrected: 30 prey and 10 predator)
+initial_conditions = [30.0, 10.0]  # 30 Sangai deer (prey), 10 Cheetahs (predators)
 
 # Time span for the simulation
-t_span = [0,50]  # From time 0 to 1000
+t_span = [0, 50]  # From time 0 to 50
 t_eval = np.linspace(0, 50, 50000)  # Points at which to evaluate the solution
 
 # Solve the system of equations
 sol = solve_ivp(lotka_volterra, t_span, initial_conditions, t_eval=t_eval, method='DOP853')
 
 # Plot the trajectory
-ax1.plot(sol.y[0], sol.y[1], color='blue', label='Trajectory')
+ax1.plot(sol.y[0], sol.y[1], color='gold', label='Trajectory')
 
 # Add title and legend
 ax1.set_title(r'Lotka-Volterra ($r_1 = 1.05, C = 0.1, d_2 = 0.6, g = 0.45$)')
 ax1.legend()
 
+# Plot the target point (18 Sangai deer and 15 Cheetahs)
+plt.plot(18, 15, 'r*', label="Target: 18 Sangai, 15 Cheetahs")
+plt.plot(30, 10, 'r+', markersize= 10, label="Initial Point: 30 Sangai, 10 Cheetahs")
+
+# Show legend and grid
+plt.legend(loc='upper right', edgecolor="black", framealpha=1)
+plt.grid(True)
+
 # Show the plot
-plt.show()
 plt.show()
