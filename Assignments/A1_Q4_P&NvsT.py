@@ -29,7 +29,7 @@ t_span = [0, 50]
 t_eval = np.linspace(0, 50, 500)
 
 # Solve the system of equations
-sol = solve_ivp(lotka_volterra, t_span, initial_conditions, t_eval=t_eval)
+sol = solve_ivp(lotka_volterra, t_span, initial_conditions, t_eval=t_eval, method='DOP853')
 
 # Extract solutions
 N_pop = sol.y[0]  # Prey population (Sangai Deer)
